@@ -1,8 +1,26 @@
 #include<stdio.h>
-#define c 299792458.0
+#include<stdlib.h>
+#include<string.h>
+
 int main()
 {
-    double a, b;
-    scanf("%lf %lf", &a, &b);
-    printf("%lf\n", (a + b) / (1 + (a * b) / (c * c)));
+    int Lscore = 0, Rscore = 0;
+    char* score = (char*)calloc(sizeof(char), 9);
+    scanf("%s", score);
+    int len = strlen(score);
+    for(int i = 0; i < len/2; i++)
+    {
+        Lscore += *(score + i) + '0';
+        Rscore += *(score + len - 1 - i) + '0';
+    }
+    if(Lscore == Rscore)
+    {
+        printf("LUCKY");
+    }
+    else
+    {
+        printf("READY");
+    }
+    free(score);
+    return 0;
 }

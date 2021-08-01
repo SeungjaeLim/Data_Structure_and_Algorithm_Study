@@ -14,24 +14,44 @@ int main()
         {
             arr[row][col] = cnt;
             cnt++; row++; col--;
+            if(cnt > 'Z')
+            {
+                cnt = 'A';
+            }
         }
         for(int i = 0; i < step; i++)
         {
             arr[row][col] = cnt;
             cnt++; row++; col++;
+            if(cnt > 'Z')
+            {
+                cnt = 'A';
+            }
         }
         for(int i = 0; i < step; i++)
         {
             arr[row][col] = cnt;
             cnt++; row--; col++;
+            if(cnt > 'Z')
+            {
+                cnt = 'A';
+            }
         }
         for(int i = 0; i < step - 1; i++)
         {
             arr[row][col] = cnt;
             cnt++; row--; col--;
+            if(cnt > 'Z')
+            {
+                cnt = 'A';
+            }
         }
         arr[row][col] = cnt;
         cnt++; col--;
+        if(cnt > 'Z')
+        {
+            cnt = 'A';
+        }
         step--;
     }
     arr[row][col] = cnt;
